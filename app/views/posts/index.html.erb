@@ -1,39 +1,32 @@
-<div class="posts posts-home">
-  
-
-    <div class="container">
-      <div class="posts posts-background">
-      <h1>Posts</h1>
-      
-      <table class="table striped-table">
-        <thead>
-          <tr>
-            <th>User</th>
-            <th>Content</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @posts.each do |post| %>
-            <tr>
-              <td><%= post.user.email %></td>
-              <td><%= post.content %></td>
-              <td><%= link_to 'Show', post %></td>
-              <% if post.user == current_user %>
-                <td><%= link_to 'Edit', edit_post_path(post) %></td>
-                <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              <% end %>
-            </tr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">Your Account</h4>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-block">
+          <% if user_signed_in? %>
+            <%= link_to 'New Post', new_post_path %>
           <% end %>
-        </tbody>
-      </table>
-
-      <br>
-
-      <% if user_signed_in? %>
-        <%= link_to 'New Post', new_post_path %>
-      <% end %>
+            <% @posts.each do |post| %>
+            <h4 class="card-title"><%= post.user.email %></h4>
+            <p class="card-text"><%= post.content %></p>
+            <% if post.user == current_user %>
+              <%= link_to 'Edit', edit_post_path(post) %>
+              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+            <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

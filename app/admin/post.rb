@@ -13,6 +13,6 @@ ActiveAdmin.register Post do
 #   permitted
 # end
 
-	permit_params :user, :content
+	permit_params :user, :content, :location
 
 end

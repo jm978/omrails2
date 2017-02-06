@@ -1,5 +1,5 @@
 class AddLocationToPosts < ActiveRecord::Migration[5.0]
   def change
-    add_column :posts, :location, :string
+    add_column :posts, :location, :text
   end
 end
