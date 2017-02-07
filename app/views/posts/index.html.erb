@@ -5,7 +5,7 @@
         <div class="card-block">
           <h4 class="card-title">Your Account</h4>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text"><%= current_user.username %></p>
           <a href="#" class="card-link">Card link</a>
           <a href="#" class="card-link">Another link</a>
         </div>
@@ -18,7 +18,7 @@
             <%= link_to 'New Post', new_post_path %>
           <% end %>
             <% @posts.each do |post| %>
-            <h4 class="card-title"><%= post.user.email %></h4>
+            <h4 class="card-title"><%= post.user.username %></h4>
             <p class="card-text"><%= post.content %></p>
             <% if post.user == current_user %>
               <%= link_to 'Edit', edit_post_path(post) %>
