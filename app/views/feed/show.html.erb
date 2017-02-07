@@ -3,21 +3,20 @@
     <div class="col-md-4">
       <div class="card">
         <div class="card-block">
-          <h4 class="card-title"><%= @user.username%></h4>
+          <h4 class="card-title">Your Account</h4>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
           <p class="card-text"><%= link_to current_user.username, user_path(current_user.username)%></p>
-          <% if current_user.following?(@user) %>
-            <p class="card-text"><%=link_to "Unfollow", unfollow_user_path(@user.username), method: :delete %>
-          <% else %>
-            <p class="card-text"><%=link_to "Follow", follow_user_path(@user.username), method: :post %>
-          <% end %>
-          </p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
         </div>
       </div>
     </div>
     <div class="col-md-8">
       <div class="card">
         <div class="card-block">
+          <% if user_signed_in? %>
+            <%= link_to 'New Post', new_post_path %>
+          <% end %>
             <% @posts.each do |post| %>
             <h4 class="card-title"><%= link_to post.user.username, user_path(post.user.username) %></h4>
             <p class="card-text"><%= post.content %></p>
