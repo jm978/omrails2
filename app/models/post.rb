@@ -4,4 +4,5 @@ class Post < ApplicationRecord
   validates :user, presence: true
   validates :content, presence: true, length: { maximum: 250 }
 
+  acts_as_votable
 end

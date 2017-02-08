@@ -16,9 +16,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :items
-  resources :posts
+  
+  resources :posts do
+    member do
+      post 'vote', to: 'votes#create'
+      delete 'unvote', to: 'votes#destroy'
+    end
+  end
   resources :tweets
+  resources :items
   
   root 'pages#home'
   get 'about' => 'pages#about'
