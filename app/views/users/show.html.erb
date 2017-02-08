@@ -5,11 +5,13 @@
         <div class="card-block">
           <h4 class="card-title"><%= @user.username%></h4>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text"><%= link_to current_user.username, user_path(current_user.username)%></p>
-          <% if current_user.following?(@user) %>
-            <p class="card-text"><%=link_to "Unfollow", unfollow_user_path(@user.username), method: :delete %>
-          <% else %>
-            <p class="card-text"><%=link_to "Follow", follow_user_path(@user.username), method: :post %>
+          <% if user_signed_in? %>
+            <p class="card-text"><%= link_to current_user.username, user_path(current_user.username)%></p>
+            <% if current_user.following?(@user) %>
+              <p class="card-text"><%=link_to "Unfollow", unfollow_user_path(@user.username), method: :delete %>
+            <% else %>
+              <p class="card-text"><%=link_to "Follow", follow_user_path(@user.username), method: :post %>
+            <% end %>
           <% end %>
           </p>
         </div>

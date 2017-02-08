@@ -3,9 +3,13 @@
     <div class="col-md-4">
       <div class="card">
         <div class="card-block">
-          <h4 class="card-title">Your Account</h4>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text"><%= link_to current_user.username, user_path(current_user.username)%></p>
+          <% if user_signed_in? %>
+            <h4 class="card-title">Your Account</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text"><%= link_to current_user.username, user_path(current_user.username)%></p>
+            <% else %>
+              <p class="card-text"><%= link_to "Sign up now!", signup_path %></p>
+            <% end %>
           <a href="#" class="card-link">Card link</a>
           <a href="#" class="card-link">Another link</a>
         </div>
