@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :tweets
   resources :items
   
+
   root 'pages#home'
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'

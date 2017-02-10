@@ -13,22 +13,27 @@
   <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-inverse navbar-toggleable-sm bg-inverse">
+    <nav class="navbar fixed-bottom navbar-dark bg-faded navbar-toggler">
       <div class="container">
-        <p class="nav-logo-writing">The Bathroom Wall</p>
-        <ul class="nav navbar-nav">
-            <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to "Contact", contact_path, class: "nav-link" %></li>
-          </ul>
-        <ul class="nav navbar-nav"
-        <!-- Login Buttons -->
-        <% if user_signed_in? %>
-          <li class="nav-item pull-md-right"><%= link_to "Log out", signout_path, method: :delete, class: "btn btn-info btn-sm" %></li>  
-        <% else %>
-          <li class="nav-item pull-md-right"><%= link_to "Sign in", signin_path, class: "nav-link" %></li> 
-          <li class="nav-item pull-md-right"><%= link_to "Sign up", signup_path, class: "btn btn-primary"%></li>
-        <% end %>
-      </ul>
+        <!-- Icons -->
+        <div class="icons-nav">
+          home
+          <%= link_to posts_path do %>
+            <%= image_tag "sample-button.jpg" %>
+          <% end %>
+          post
+          <%= link_to new_post_path do %>
+            <%= image_tag "sample-button.jpg" %>
+          <% end %>
+          feed
+          <%= link_to feed_path do %>
+            <%= image_tag "sample-button.jpg" %>
+          <% end %>
+          Me
+          <p class="card-text"><%= link_to current_user.username, user_path(current_user.username)%></p>
+          
+        </div>
+        
     </div>
 </nav>
 
@@ -46,11 +51,9 @@
       
         <hr>
         <center>
-        <%= octicon "alert", :height => 32,  :class => "right left", :"aria-label" => "hi" %>
-          <p>© 2016 One Month</p>
+        
         </center>
       </div>
     </footer>
-
   </body>
 </html>
