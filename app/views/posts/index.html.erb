@@ -1,29 +1,31 @@
-
-<div class="container">
+<div class="posts posts-home">
+  <div class="container">
+    <div class="posts posts-background">
       <div class="card">
-        <div class="card-block">
-          <% if user_signed_in? %>
-            <%= link_to 'New Post', new_post_path %>
-          <% end %>
-            <% @posts.each do |post| %>
-            <h4 class="card-title"><%= link_to post.user.username, user_path(post.user.username) %></h4>
-            <p class="card-text"><%= post.content %></p>
-            <% if post.image.present? %>
-              <center><%= image_tag post.image, class: "img-fluid" %><center>
+        <center><h4>Welcome to the Bathroom Wall</h4></center>
+          <div class="card-block">
+            <% if user_signed_in? %>
+              <%= link_to 'New Post', new_post_path %>
             <% end %>
+              <% @posts.each do |post| %>
+              <h4 class="card-title"><%= link_to post.user.username, user_path(post.user.username) %></h4>
+              <p class="card-text"><%= post.content %></p>
+              <% if post.image.present? %>
+                <center><%= image_tag post.image, class: "img-fluid" %><center>
+              <% end %>
 
-            <!-- Likes -->
-            <%= octicon "heart", :height => 16,  :class => "right left", :"aria-label" => "Home" %>
-            <%= post.votes_for.up.size %>
-            <%= link_to 'Vote', vote_post_path(post), method: :post %>
-           <br>
-           <br>
-            
-            <% if post.user == current_user %>
-              <%= link_to 'Edit', edit_post_path(post) %>
-              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
-            <% end %>
+              <!-- Likes -->
+              <%= octicon "heart", :height => 16,  :class => "right left", :"aria-label" => "Home" %>
+              <%= post.votes_for.up.size %>
+              <%= link_to 'Like', vote_post_path(post), method: :post %>
+             <br>
+             <br>
+              
+              <% if post.user == current_user %>
+                <%= link_to 'Edit', edit_post_path(post) %>
+                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+              <% end %>
         </div>
       </div>
     </div>

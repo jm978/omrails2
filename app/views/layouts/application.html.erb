@@ -13,24 +13,24 @@
   <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar fixed-bottom navbar-dark bg-faded navbar-toggler">
+    <center><nav class="navbar fixed-bottom navbar-dark bg-faded navbar-toggler">
       <div class="container">
         <!-- Icons -->
         <div class="icons-nav">
-          home
+          
           <%= link_to posts_path do %>
-            <%= image_tag "sample-button.jpg" %>
+            <%= image_tag "button_home.png" %>
           <% end %>
-          post
+        
           <%= link_to new_post_path do %>
-            <%= image_tag "sample-button.jpg" %>
+            <%= image_tag "button_post.png" %>
           <% end %>
-          feed
+          
           <%= link_to feed_path do %>
-            <%= image_tag "sample-button.jpg" %>
+            <%= image_tag "button_feed.png" %>
           <% end %>
-          Me
-          <p class="card-text"><%= link_to current_user.username, user_path(current_user.username)%></p>
+        
+          <p class="card-text"><%= link_to current_user.username, user_path(current_user.username)%></p></center>
           
         </div>
         
