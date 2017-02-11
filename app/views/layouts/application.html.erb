@@ -18,24 +18,17 @@
         <!-- Icons -->
         <div class="icons-nav">
           
-          <%= link_to posts_path do %>
-            <%= image_tag "button_home.png" %>
-          <% end %>
-        
-          <%= link_to new_post_path do %>
-            <%= image_tag "button_post.png" %>
-          <% end %>
           
-          <%= link_to feed_path do %>
-            <%= image_tag "button_feed.png" %>
-          <% end %>
-        
+          <%= link_to(image_tag("button_home.png"), posts_path) %>
+          <%= link_to(image_tag("button_post.png"), new_post_path) %>
+          <%= link_to(image_tag("button_feed.png"), feed_path) %>
+
           <p class="card-text"><%= link_to current_user.username, user_path(current_user.username)%></p></center>
           
         </div>
         
-    </div>
-</nav>
+      </div>
+    </nav>
 
     <!-- Flash Messages -->
     <% flash.each do |name, message| %>
