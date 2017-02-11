@@ -5,7 +5,6 @@
         <div class="card-block">
           <h4>Your Account</h4>
             <h3 class="card-title"><%= @user.username%></h3>
-            <p><% image_tag ("follow.png") %></p>
             
             <% if user_signed_in? %>
               <p class="card-text"><%= link_to current_user.username, user_path(current_user.username)%></p>
