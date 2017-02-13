@@ -15,7 +15,7 @@
               <% end %>
 
               <!-- Likes -->
-              <%= octicon "heart", :height => 16,  :class => "right left", :"aria-label" => "Home" %>
+              <%= octicon "heart", :height => 16,  :class => "right left", :"aria-label" => "new_post_path" %>
               <%= post.votes_for.up.size %>
               <%= link_to 'Like', vote_post_path(post), method: :post %>
              <br>
