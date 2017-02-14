@@ -3,10 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .jumbotron-home {
-    background-image: url(image_path('home-bg.jpg'));
+    background-image: url(image_path('graffiti.jpg'));
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    color: white;
+    letter-spacing: 3px;
 }
 
 .posts-home {
