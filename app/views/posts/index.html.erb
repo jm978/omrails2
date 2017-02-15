@@ -2,11 +2,9 @@
   <div class="row">
     <div class="col">
       <div class="card">
-        <center><h4>Welcome to the Bathroom Wall</h4></center>
+        <center><%= image_tag("logo.png", :alt => "rss feed", class: "img-fluid") %></center>
           <div class="card-block">
-            <% if user_signed_in? %>
-              <%= link_to 'New Post', new_post_path %>
-            <% end %>
+            
               <% @posts.each do |post| %>
               <h4 class="card-title"><%= link_to post.user.username, user_path(post.user.username) %></h4>
               <p class="card-text"><%= post.content %></p>
@@ -14,7 +12,7 @@
                 <center><%= image_tag post.image, class: "img-fluid" %><center>
               <% end %>
               <!-- comment -->
-              
+
 
               <!-- Likes -->
               <%= octicon "heart", :height => 16,  :class => "right left", :"aria-label" => "new_post_path" %>

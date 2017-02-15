@@ -1,23 +1,20 @@
 <% if user_signed_in? %>
     <div class="jumbotron jumbotron-home"
         <div class="container">
-            <h1>Welcome back!</h1>
+            <center><%= image_tag("welcome_back.png", :alt => "welcome back", class: "img-fluid") %></center>
         </div>
     </div>
     <% else %>
         <div class="jumbotron jumbotron-home"
             <div class="container">
-                <h1>Welcome to The Bathroom Wall</h1>
+                <center><%= image_tag("welcome.png", :alt => "welcome to the bathroom wall", class: "img-fluid") %></center>
                 <%= link_to "Go to the Wall »", signin_path, class: "btn btn-primary btn-lg" %> 
     </div>
 </div>
 <div class="container">
-    <div class="row">
         <center><h4 class>The Bathroom Wall is a completely anonymous platform. </h4>
         <h5>Do you have a secret or a rant that you have to get off your chest? </h5>
         <h5>Post it on the Bathroom Wall!</h5></center>
-            
-        </div>
-    </div>
+</div>
 </div>
 <% end %>
