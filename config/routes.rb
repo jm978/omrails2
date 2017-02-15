@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   
   get 'feed', to: 'feed#show'
 
+  post 'comments' => 'comments#create', as: "create_comment"
+
   resources :users, only: :show, param: :username do
     member do
       post 'follow', to: 'follows#create'

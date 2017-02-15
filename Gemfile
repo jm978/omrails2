@@ -24,6 +24,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem "paperclip", "~> 5.0.0"
 gem 'octicons'
 gem 'octicons_helper'
+gem 'acts_as_commentable'
 
 group :development, :test do
   gem 'byebug', platform: :mri
