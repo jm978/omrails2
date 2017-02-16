@@ -2,14 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.jumbotron-home {
-    background-image: url(image_path('graffiti.jpg'));
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    color: white;
-    letter-spacing: 1px;
-}
+
 
 .posts-home {
 	background-image: url(image_path('graffiti.jpg'));
@@ -20,7 +13,11 @@
 
 .posts-background {
 	background-color: white;
-	padding: 10px
+	padding: 10px;
+	margin-right: 70px;
+	margin-left: 70px;
+	opacity: 0.8;
+	border-radius: 8px;
 }
 
 .nav-logo-writing {
@@ -38,4 +35,21 @@
 
 @-ms-viewport{
   width: device-width;
+}
+
+.splash-page {
+	background-image: url(image_path('lady_graffiti.jpg'));
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.post-font {
+	font-family: 'Nothing You Could Do', cursive;
+	font-size: 24px;
+}
+
+.following-font {
+	font-family: 'Loved by the King', cursive;
+	font-size: 24px;
 }

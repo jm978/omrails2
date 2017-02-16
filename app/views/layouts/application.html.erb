@@ -7,6 +7,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Loved+by+the+King|Nothing+You+Could+Do" rel="stylesheet">
     
 
   </head>
@@ -19,11 +22,11 @@
         <!-- Icons -->
         <div class="icons-nav">
         <% if user_signed_in? %>
-          <%= link_to(image_tag("button_home.png"), posts_path) %>
-          <%= link_to(image_tag("button_post.png"), new_post_path) %>
-          <%= link_to(image_tag("button_feed.png"), feed_path) %>
+          <%= link_to(image_tag("home.png"), posts_path) %>
+          <%= link_to(image_tag("new-post.png"), new_post_path) %>
+          <%= link_to(image_tag("following.png"), feed_path) %>
             <%= link_to user_path(current_user.username) do %>
-            <%= image_tag ("button_me.png") %>
+            <%= image_tag ("me.png") %>
           <% end %>
           <% end %>
         </div>

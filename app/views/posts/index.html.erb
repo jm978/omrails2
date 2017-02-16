@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col">
       <div class="card">
-        <center><%= image_tag("logo.png", :alt => "rss feed", class: "img-fluid") %></center>
+        <center><%= image_tag("welcome.png", :alt => "rss feed", class: "img-fluid") %></center>
           <div class="card-block">
             
               <% @posts.each do |post| %>
               <h4 class="card-title"><%= link_to post.user.username, user_path(post.user.username) %></h4>
-              <p class="card-text"><%= post.content %></p>
+              <p class="post-font"><%= post.content %></p>
               <% if post.image.present? %>
                 <center><%= image_tag post.image, class: "img-fluid" %><center>
               <% end %>
@@ -15,12 +15,16 @@
 
 
               <!-- Likes -->
-              <%= octicon "heart", :height => 16,  :class => "right left", :"aria-label" => "new_post_path" %>
-              <%= post.votes_for.up.size %>
-              <%= link_to 'Like', vote_post_path(post), method: :post %>
+                <%= image_tag("heart.png") %>
+                <%= link_to 'Epic', vote_post_path(post), method: :post %>
+                <%= post.votes_for.up.size %>
+                &nbsp;
+                <%= image_tag("toilet.png") %>
+                <%= link_to 'Flush', unvote_post_path(post), method: :delete %>
+                
+                <%= post.votes_for.down.size %>
              <br>
              <br>
-              
               <% if post.user == current_user %>
                 <%= link_to 'Edit', edit_post_path(post) %>
                 <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
