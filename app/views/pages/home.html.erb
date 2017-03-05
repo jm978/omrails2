@@ -1,9 +1,16 @@
 <div class="splash splash-page"
     <div class="container">
+        <br>
+        <br>
+        <br>
         <% if user_signed_in? %>
             <center><%= image_tag("welcome_back.png", :alt => "welcome back", class: "img-fluid") %></center>
         <% else %>
                 <center><%= image_tag("welcome.png", :alt => "welcome to the bathroom wall", class: "img-fluid") %></center>
+                <br>
+                <br>
+                <br>
+                <br>
                 <br>
         <div class="posts posts-background">
             <center><h6 class>The Bathroom Wall is a completely anonymous platform. </h6>
@@ -11,7 +18,13 @@
             <p>Post it on the Bathroom Wall!</p></center>
         </div>
         <br>
+        <br>
+        <br>
+        <br>
         <%= link_to "Go to the Wall »", signin_path, class: "btn btn-primary btn-lg" %> 
+        <br>
+        <br>
+        <br>
         <br>
         <br>
 </div>
