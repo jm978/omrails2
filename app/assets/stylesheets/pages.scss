@@ -33,6 +33,11 @@
 	padding-right:	2px;
 }
 
+.image_container img {
+	max-width:	60px;
+	max-height:	60px;
+}
+
 @-ms-viewport{
   width: device-width;
 }

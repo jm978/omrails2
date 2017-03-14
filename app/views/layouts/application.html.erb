@@ -21,14 +21,24 @@
       <div class="container">
         <!-- Icons -->
         <div class="icons-nav">
-        <% if user_signed_in? %>
-          <%= link_to(image_tag("home.png"), posts_path) %>
-          <%= link_to(image_tag("new-post.png"), new_post_path) %>
+        <div class="row">
+          <div class="col">
+            <% if user_signed_in? %>
+              <%= link_to(image_tag("home.png"), posts_path)  %>
+          </div>
+          <div class="col">
+            <%= link_to(image_tag("new-post.png"), new_post_path) %>
+          </div>
+          <div class="col">
           <%= link_to(image_tag("following.png"), feed_path) %>
+          </div>
+          <div class="col">
             <%= link_to user_path(current_user.username) do %>
             <%= image_tag ("me.png") %>
           <% end %>
           <% end %>
+          </div>
+        </div>
         </div>
       </div>
     </nav>
