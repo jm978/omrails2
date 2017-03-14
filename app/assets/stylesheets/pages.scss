@@ -39,9 +39,10 @@
 
 .splash-page {
 	background-image: url(image_path('lady-graffiti-750.jpg'));
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 .post-font {
